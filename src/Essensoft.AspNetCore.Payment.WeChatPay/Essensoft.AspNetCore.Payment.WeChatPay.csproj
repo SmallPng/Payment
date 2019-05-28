@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.1;netcoreapp2.2;</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;</TargetFrameworks>
     <PackageId>Essensoft.AspNetCore.Payment.WeChatPay</PackageId>
     <PackageTags>Essensoft;AspNetCore;Payment;WeChatPay;微信支付;</PackageTags>
   </PropertyGroup>

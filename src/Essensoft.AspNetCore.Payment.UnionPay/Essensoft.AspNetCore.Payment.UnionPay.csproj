@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.1;netcoreapp2.2;</TargetFrameworks>
+    <TargetFrameworks>netcoreapp2.1;</TargetFrameworks>
     <PackageId>Essensoft.AspNetCore.Payment.UnionPay</PackageId>
     <PackageTags>Essensoft;AspNetCore;Payment;UnionPay;银联支付;</PackageTags>
   </PropertyGroup>

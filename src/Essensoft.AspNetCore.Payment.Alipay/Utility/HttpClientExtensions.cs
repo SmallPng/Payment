@@ -39,10 +39,14 @@ namespace Essensoft.AspNetCore.Payment.Alipay.Utility
         public static async Task<string> DoPostAsync(this HttpClient client, string url, string content)
         {
             using (var requestContent = new StringContent(content, Encoding.UTF8, "application/x-www-form-urlencoded"))
-            using (var response = await client.PostAsync(url, requestContent))
-            using (var responseContent = response.Content)
             {
-                return await responseContent.ReadAsStringAsync();
+                using (var response = await client.PostAsync(url, requestContent))
+                {
+                    using (var responseContent = response.Content)
+                    {
+                        return await responseContent.ReadAsStringAsync();
+                    }
+                }
             }
         }
 

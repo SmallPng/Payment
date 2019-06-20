@@ -6,6 +6,7 @@
     <TargetFrameworks>netcoreapp2.1;</TargetFrameworks>
     <PackageId>Essensoft.AspNetCore.Payment.Alipay</PackageId>
     <PackageTags>Essensoft;AspNetCore;Payment;Alipay;支付宝;</PackageTags>
+    <Version>2.3.3</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Essensoft.AspNetCore.Payment.WeChatPay;
 using Essensoft.AspNetCore.Payment.WeChatPay.Request;
 using Microsoft.AspNetCore.Mvc;
@@ -76,13 +77,25 @@ namespace WebApplicationSample.Controllers
         {
             var request = new WeChatPayUnifiedOrderRequest
             {
-                Body = viewModel.Body,
-                OutTradeNo = viewModel.OutTradeNo,
-                TotalFee = viewModel.TotalFee,
-                SpbillCreateIp = viewModel.SpbillCreateIp,
-                NotifyUrl = viewModel.NotifyUrl,
-                TradeType = viewModel.TradeType,
-                OpenId = viewModel.OpenId
+
+                Body = "测试商品",//商品名称
+                OutTradeNo = DateTime.Now.ToString("yyyyMMhhddmmss"),//单号
+                TotalFee = 120,//金额*100
+                SpbillCreateIp = "111.231.71.111",//获取终端Ip,
+                NotifyUrl = "http://www.shhjy.cn/access/unifiedorder",
+                // viewModel.NotifyUrl
+
+
+                TradeType = "JSAPI",//viewModel.TradeType,
+                OpenId = "or1ZywUA0RJl6glVkPZC1a7h-Us8" //viewModel.OpenId//
+
+                //Body = viewModel.Body,
+                //OutTradeNo = viewModel.OutTradeNo,
+                //TotalFee = viewModel.TotalFee,
+                //SpbillCreateIp = viewModel.SpbillCreateIp,
+                //NotifyUrl = viewModel.NotifyUrl,
+                //TradeType = viewModel.TradeType,
+                //OpenId = viewModel.OpenId
             };
             var response = await _client.ExecuteAsync(request);
             if (response.ReturnCode == "SUCCESS" && response.ResultCode == "SUCCESS")
@@ -205,7 +218,7 @@ namespace WebApplicationSample.Controllers
                 TotalFee = viewModel.TotalFee,
                 SpbillCreateIp = viewModel.SpbillCreateIp,
                 NotifyUrl = viewModel.NotifyUrl,
-                TradeType = viewModel.TradeType
+                TradeType = "MWEB"//viewModel.TradeType
             };
             var response = await _client.ExecuteAsync(request);
 
